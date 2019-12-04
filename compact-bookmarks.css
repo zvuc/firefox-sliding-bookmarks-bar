@@ -1,0 +1,37 @@
+/* ----------------------------- */
+/* Firefox Compact Bookmarks Bar */
+/* ----------------------------- */
+
+/* remove bookmark folder drop marker */
+.toolbarbutton-menu-dropmarker {
+    display: none !important;
+}
+
+/* Add custom padding size for items below */
+toolbarbutton.bookmark-item[image]:not([container]) {
+    
+}
+
+/* No Favicon Available - Don't display default icon */
+toolbarbutton.bookmark-item:not([container]):not([image]) image {
+    display: none !important;
+}
+
+/* Show Favicon Bookmarks */
+.bookmark-item > .toolbarbutton-icon {
+    display: -moz-box ! important;
+    background-position: 0px 1px !important;
+    padding-right: 0px ! important;
+    margin: 0 !important;
+}
+
+/* Hide label text for items with favicon */
+#personal-bookmarks toolbarbutton[image] label {
+    display: none !important;
+}
+
+/* Hide folder icon for folders */
+.bookmark-item[container] > .toolbarbutton-icon {
+    margin-right: 5px !important;
+    display: none !important;
+}
