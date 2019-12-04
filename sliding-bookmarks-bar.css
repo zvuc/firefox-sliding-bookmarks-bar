@@ -1,0 +1,77 @@
+/* ----------------------------- */
+/* Firefox Sliding Bookmarks Bar */
+/* ----------------------------- */
+
+:root {
+   --toolbar-offset-height: 40px;
+}
+
+#PersonalToolbar:not([customizing]) {
+   position: fixed !important;
+   margin-top: -29px !important;
+   padding-top: 4px !important;
+   padding-bottom: 5px !important;
+   height: auto !important;
+   width: 100% !important;
+ 
+   border: none !important; 
+   box-shadow: 0 1px 0 0 rgba(0,0,0,0.3);
+   
+   transform: scaleY(0.8);
+   transform-origin: center bottom;
+   transition: transform cubic-bezier(.22,.61,.36,1) 0.15s !important;
+   z-index: 2;
+}
+
+#PersonalToolbar:not([customizing]) #personal-bookmarks {
+   opacity: 0;
+   transition: opacity 0.15s;
+}
+
+#nav-bar {
+   z-index: 3 !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+   z-index: 4 !important;
+}
+#navigator-toolbox:hover #nav-bar:not([customizing]) { 
+
+}
+
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) {
+   position: fixed !important;
+   
+   transform: translateY(100%) scaleY(1);
+}
+
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+   opacity: 1;
+}
+
+/* Hide 1px border-bottom */
+#navigator-toolbox:after {
+   display: none !important;
+}
+
+/* compact theme */
+:root[lwtheme="true"] #PersonalToolbar:not([customizing]) {
+   top: var(--toolbar-offset-height) !important;
+}
+
+/* compact + titlebar active */
+:root[lwtheme="true"]:not([tabsintitlebar="true"])
+#nav-bar ~ #PersonalToolbar:not([customizing]) {
+   top: calc(var(--toolbar-offset-height) + 20px) !important;
+}
+
+/* default theme */
+:root:not([lwtheme="true"]) #PersonalToolbar:not([customizing]) {
+   top: calc(var(--toolbar-offset-height) + 17px) !important;
+}
+
+/* default + titlebar active */
+:root:not([lwtheme="true"]):not([tabsintitlebar="true"])
+#nav-bar ~ #PersonalToolbar:not([customizing]) {
+   top: calc(var(--toolbar-offset-height) + 8px) !important;
+}
