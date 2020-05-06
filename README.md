@@ -1,6 +1,6 @@
-![Dec-04-2019 20-46-10](https://user-images.githubusercontent.com/2870726/70140393-f4428000-16d7-11ea-9191-78cd7dabe685.gif)
+![firefox-sliding-bookmarks](https://user-images.githubusercontent.com/2870726/81133027-5820eb80-8f8b-11ea-813c-f28c0543f0c0.gif)
 
-# Sliding Bookmarks Bar userChrome.css tweak for Firefox (71.0+) on macOS
+# Sliding Bookmarks Bar userChrome.css tweak for Firefox (76.0+) on macOS
 
 Makes your Firefox bookmarks bar slide out only when you hover over the navbar, making it look more clean and simple.
 
