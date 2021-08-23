@@ -78,3 +78,8 @@
   top: calc(var(--toolbar-offset-height) + 8px) !important;
 }
 
+/* z-index override for notification bar */
+.notificationbox-stack[notificationside="top"] {
+  z-index: 2 !important;
+}
+
