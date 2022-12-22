@@ -6,22 +6,24 @@
 }
 
 #PersonalToolbar:not([customizing]) {
-  position: fixed !important;
-  margin-top: calc(var(--toolbar-offset-height)*-1 + 9px) !important;
+  position: absolute !important;
+  bottom: 0 !important;
   padding-bottom: 5px !important;
   height: auto !important;
   width: 100% !important;
   border: none !important; 
-  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.1) inset;
-  transform: scaleY(0.8);
+  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.5) inset;
+  transform: translateY(0%) scaleY(1);
   transform-origin: center bottom;
-  transition: transform cubic-bezier(.22,.61,.36,1) 0.15s !important;
+  transition: transform cubic-bezier(.05,.79,.15,1) 0.3s !important;
   z-index: 2;
 }
 
 #PersonalToolbar:not([customizing]) #personal-bookmarks {
   opacity: 0;
-  transition: opacity 0.15s;
+  transform: translateY(100%) scaleY(1);
+  transform-origin: center bottom;
+  transition: opacity 0.15s, transform cubic-bezier(.05,.79,.15,1) 0.3s;
 }
 
 /* prevent 1px border in selected tab */
@@ -42,12 +44,15 @@
   z-index: 4 !important;
 }
 
-#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) {
-  position: fixed !important;
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]),
+#navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) {
+  position: absolute !important;
   transform: translateY(100%) scaleY(1);
 }
 
-#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks,
+#navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+  transform: translateY(0%) scaleY(1);
   opacity: 1;
 }
 
@@ -56,30 +61,17 @@
   display: none !important;
 }
 
-/* compact theme */
-:root[lwtheme="true"] #PersonalToolbar:not([customizing]) {
-  top: var(--toolbar-offset-height) !important;
-}
-
-/* compact + titlebar active */
-:root[lwtheme="true"]:not([tabsintitlebar="true"])
-#nav-bar ~ #PersonalToolbar:not([customizing]) {
-  top: calc(var(--toolbar-offset-height) + 20px) !important;
-}
-
-/* default theme */
-:root:not([lwtheme="true"]) #PersonalToolbar:not([customizing]) {
-  top: calc(var(--toolbar-offset-height) + 17px) !important;
-}
-
-/* default + titlebar active */
-:root:not([lwtheme="true"]):not([tabsintitlebar="true"])
-#nav-bar ~ #PersonalToolbar:not([customizing]) {
-  top: calc(var(--toolbar-offset-height) + 8px) !important;
-}
-
 /* z-index override for notification bar */
 .notificationbox-stack[notificationside="top"] {
   z-index: 2 !important;
 }
 
+#PlacesToolbarItems > toolbarseparator:before {
+  opacity: 0.8 !important;
+}
+
+.bookmark-item > .toolbarbutton-icon,
+.bookmark-item > .menu-iconic-left > .menu-iconic-icon {
+  will-change: transform !important;
+  image-rendering: optimizequality !important;
+}
