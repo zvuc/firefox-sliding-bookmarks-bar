@@ -44,13 +44,19 @@
   z-index: 4 !important;
 }
 
-#navigator-toolbox:hover > #PersonalToolbar:not([customizing]),
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) {
+  position: absolute !important;
+  transform: translateY(100%) scaleY(1);
+}
 #navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) {
   position: absolute !important;
   transform: translateY(100%) scaleY(1);
 }
 
-#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks,
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+  transform: translateY(0%) scaleY(1);
+  opacity: 1;
+}
 #navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) #personal-bookmarks {
   transform: translateY(0%) scaleY(1);
   opacity: 1;
