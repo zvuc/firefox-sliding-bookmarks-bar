@@ -12,7 +12,7 @@
   height: auto !important;
   width: 100% !important;
   border: none !important; 
-  box-shadow: 0 -1px 0 0 rgba(0,0,0,0.5) inset;
+  box-shadow: 0 -1px 0 0 light-dark(rgba(0,0,0,0.2),rgba(0,0,0,0.9)) inset;
   transform: translateY(0%) scaleY(1);
   transform-origin: center bottom;
   transition: transform cubic-bezier(.05,.79,.15,1) 0.3s !important;
