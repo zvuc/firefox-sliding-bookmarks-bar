@@ -50,7 +50,7 @@
   transform: translateY(100%) scaleY(1);
   box-shadow: 0 1px 0 0 light-dark(rgba(0,0,0,0.2),rgba(0,0,0,0.9));
 }
-#navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) {
+#navigator-toolbox:has(toolbarbutton[open="true"]) > #PersonalToolbar:not([customizing]) {
   position: absolute !important;
   transform: translateY(100%) scaleY(1);
 }
@@ -59,7 +59,7 @@
   transform: translateY(0%) scaleY(1);
   opacity: 1;
 }
-#navigator-toolbox:has([open="true"]) > #PersonalToolbar:not([customizing]) #personal-bookmarks {
+#navigator-toolbox:has(toolbarbutton[open="true"]) > #PersonalToolbar:not([customizing]) #personal-bookmarks {
   transform: translateY(0%) scaleY(1);
   opacity: 1;
 }
